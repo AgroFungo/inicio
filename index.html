@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal SIAFK | SIAF-AGAVE & FUNGI-PORK</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Fondo limpio con degradado radial suave igual a la imagen de referencia */
+            background: radial-gradient(circle at center, #ffffff 0%, #f7f7f4 65%, #ecece6 100%);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+            padding: 2rem;
+        }
+
+        .portal-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(2.5rem, 7vw, 7rem);
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 1.5rem;
+            border-radius: 24px;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
+            cursor: pointer;
+        }
+
+        .project-link:hover {
+            transform: translateY(-10px) scale(1.03);
+            filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.08));
+        }
+
+        .project-link:active {
+            transform: translateY(-3px) scale(0.99);
+        }
+
+        .logo-siaf {
+            width: clamp(260px, 34vw, 430px);
+            height: auto;
+            object-fit: contain;
+            /* Funde el fondo blanco del JPEG con el fondo del portal */
+            mix-blend-mode: multiply;
+        }
+
+        .logo-fungi {
+            width: clamp(290px, 40vw, 520px);
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .footer-hint {
+            margin-top: auto;
+            padding-top: 1.5rem;
+            color: #9ca3af;
+            font-size: 0.85rem;
+            text-align: center;
+            letter-spacing: 0.02em;
+            user-select: none;
+        }
+
+        @media (max-width: 768px) {
+            .portal-container {
+                flex-direction: column;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="portal-container">
+        <!-- Proyecto Izquierdo: SIAF-AGAVE -->
+        <a id="link-siaf" href="siaf-agave.html" class="project-link" title="Ir a SIAF-AGAVE">
+            <img id="img-siaf" src="siaf.jpeg" alt="SIAF-AGAVE - Sistema Integral Agroindustrial Fúngico" class="logo-siaf">
+        </a>
+
+        <!-- Proyecto Derecho: FUNGI-PORK -->
+        <a id="link-fungi" href="fungi-pork.html" class="project-link" title="Ir a FUNGI-PORK">
+            <img id="img-fungi" src="LOGO CON K.png" alt="FUNGI-PORK - Pellet Funcional para Nutrición Porcina" class="logo-fungi">
+        </a>
+    </main>
+
+    <footer class="footer-hint">
+        Selecciona un proyecto para acceder a su plataforma correspondiente
+    </footer>
+
+    <script>
+        // =========================================================================
+        // CONFIGURACIÓN DE ENLACES (Modalidad gratuita GitHub Pages)
+        // =========================================================================
+        // Puedes enlazar a otros archivos dentro del mismo repositorio AgroFungo
+        // (ej. "siaf-agave.html") o pegar la URL de otros repositorios de tu cuenta
+        // (ej. "https://pandepapa.github.io/siaf-agave/")
+        const CONFIG = {
+            urlSiaf: "https://agrofungo.github.io/SIAF-AGAVE/",
+            urlFungi: "https://agrofungo.github.io/FUNGI-PORK/"
+        };
+
+        document.getElementById('link-siaf').href = CONFIG.urlSiaf;
+        document.getElementById('link-fungi').href = CONFIG.urlFungi;
+    </script>
+
+</body>
+</html>
